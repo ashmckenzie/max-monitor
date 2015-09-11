@@ -1,0 +1,48 @@
+h3 {
+  text-align: right;
+}
+
+.row {
+  line-height: 4.5em;
+  margin: 0 auto;
+}
+
+.value {
+  display: inline-block;
+  font-family: Chintzy CPU BRK;
+  font-size: 3em;
+  letter-spacing: 6px;
+  min-width: 146px;
+}
+
+.row-padding {
+  padding-top: 10px;
+}
+
+.debug {
+  border: 1px dotted red;
+}
+
+.weather-icons {
+  background-image: url(/img/Climacons.fw.png);
+  display: inline-block;
+  height: 44px;
+  width: 44px;
+  margin: 0;
+  position: relative;
+  top: 8px;
+}
+
+.weather-icons.temperature {
+  background-position: -110px 158px;
+}
+
+.weather-icons.humidity {
+  background-position: -111px 543px;
+}
+
+.history {
+  border: 1px solid #eee;
+  height: 200px;
+  margin: 0 auto;
+}
