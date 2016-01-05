@@ -5,6 +5,10 @@ var graphData = {}
 var temperatureRange = [ 15, 30 ];
 var humidityRange = [ 40, 60 ];
 
+Array.prototype.last = function() {
+  return this[this.length-1];
+}
+
 function getData() {
   $.getJSON('/latest/json', function(data) {
     $.each(data, function(key, val) { addToGraphData(val) });
@@ -30,6 +34,8 @@ function setupGraphs() {
     margins: { top: 30, right: 30, bottom: 30, left: 30 }
   });
 
+  $('.temperature-value').text(graphData.temperature.last().y).change();
+
   graphs['humidity'] = $('.humidity-history').epoch({
     type:    'time.line',
     data:    [ { label: "Humidity", values: graphData.humidity, range: humidityRange } ],
@@ -37,6 +43,8 @@ function setupGraphs() {
     range:   { left: humidityRange },
     margins: { top: 30, right: 30, bottom: 30, left: 30 }
   });
+
+  $('.humidity-value').text(graphData.humidity.last().y).change();
 }
 
 function now() {
